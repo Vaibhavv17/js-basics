@@ -66,3 +66,43 @@ console.log(Object.entries(tinderUser)); //every key value is made an array, arr
 //if values doesnt exist then crash hone ke chance hai 
 console.log(tinderUser.hasOwnProperty('name'));
 //hence use this to check
+
+
+// destructoring, array ki bhi hoti hai 
+
+const course = {
+    coursename: "js in hindi",
+    price: "999",
+    courseInstructor: "Vaibhavv"
+}
+//course.courseInstructor //but tedious to use it again and again
+
+const {courseInstructor: instructor} = course // instructor acts as Alias
+// console.log(courseInstructor);
+console.log(instructor);
+
+//apna kaam kisi aur ke sar par daldena hai usko api kehte hai, restraunt mei suppose vada pav khana hai, yeh banega kese voh humari chinta nahi hain
+//api values aate hai backend se, unko kese likhte hai, pehle xml mei ata tha ab json mei ata tha
+
+// {
+
+// } //this is json, just an object
+
+// {
+//     "name": "hitesh",
+//     "coursename": "js in hindi",
+//     "price":"free"
+// }
+// json ka syntax ke liye, keys bhi usually strings hoti hai
+//fetch method kese use kartau, yeh wala url call karunga, response mei yeh data miljayega, and hence convert to object and remove values
+
+[
+    {},
+    {},
+    {}
+]
+
+
+
+
+
