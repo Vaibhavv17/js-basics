@@ -44,7 +44,38 @@ console.log(loginUserMessage("vaibhavv"))
 
 //if nothing is passed to fn then undefined ayega
 
+//shopping kart mei pata nahi kitna add karega user 
 
+function calculateCartPrice(...num1) //if suppose val1, val2, ...num1 are parameters, and input is 200 400 500 2000, then num1 will be 500 2000
+{
+    return num1
+}
+console.log(calculateCartPrice(200, 400, 500)); //if suppose many like 200 400 500, hence use a rest operator, and can pass any no of arguments
 
+const user = {
+    username:"hitesh",
+    price:199
+}
 
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+    
+}
+
+// handleObject(user) 
+handleObject({
+    username: "shreeya",
+    price:399
+})
+
+//array also similar
+
+const myNewArray = [200,400,100,600]
+
+function      returnSecondValue(getArray){
+    return getArray[1]
+}
+
+console.log(returnSecondValue(myNewArray));
+console.log(returnSecondValue([200, 400, 100, 600]));
 
