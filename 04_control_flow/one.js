@@ -57,3 +57,5 @@ if (loggedInFromGoogle ||loggedInFromEmail){
     console.log("user logged in");
     // or, mei any can be true
 }
+
+// && and || are logical operators
