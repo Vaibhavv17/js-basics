@@ -11,14 +11,14 @@ switch(month){ //month is key
         break;
     case "march":
         console.log("march");
-        break;
+         break;
     case "april":
         console.log("april");
-        break;
+         break;
     default: //similar to else
         console.log("default case match");
         
-//if no break, then jahape bhi key match hogya uska baad ka sara code execute hojata hai except default.control flow ko break karta hai 'break'
+//if no break, then jahape bhi key match hogya uska baad ka sara code execute hojata hai.control flow ko break karta hai 'break'
 }
 
 //switch mei comparision operator nahi use karna padta
