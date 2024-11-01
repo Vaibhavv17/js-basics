@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" //onclick= "//alert('owl')" //notfeasibleinactualdontdolikethis  ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // javascript mei sare events sequentially hi run hote hai mostly
+    // browser events mei but depends on actions and not sequential order, hence does not follow sequential order
+    //attachEvent()
+    // jQuery - on 
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // } // again not best approach as it does not give all the features, event listener gives propogation facility too.
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, offset, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+//     document.getElementById('owl').addEventListener('click',function(e)//event object
+//     {
+//         // alert("owl clicked")
+//         console.log(e);
+//         //sometimes we dont want propogation
+//         e.stopPropagation()  
+//     },false) //as default false hi hai toh likhna zaroori nahi 
+//     // event propogation - event bubbling and event capturing
+//     document.getElementById('images').addEventListener('click',function(e)//event object
+//     {
+//         console.log("clicked inside the ul");     
+//     },false)
+// // bubble niche se upar jata hai, hence pehle owl print hoga phir next wala, bubbling up, event propogation. In capturing, top se bottom jata hai. bubbling - false capturing- true 
+//     document.getElementById('google').addEventListener('click',function(e){
+//         e.preventDefault()
+//         console.log("google clicked");
+//         e.stopPropagation();
+//     })
+
+    document.getElementById('images').addEventListener('click', function(e){
+         // console.log(e);
+        
+         // console.log(e.target);// kahase hora hai
+        // console.log(e.target.parentNode); // parent of target
+        // let removeIt = e.target.parentNode;
+        // removeIt.remove() //this is new method
+        // removeIt.parentNode.removeChild(removeIt)
+        // the problem is if im selecting list item the whole ul is getting removed
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove() 
+        }
+    }, false)
+</script>
+</html>
+
+
