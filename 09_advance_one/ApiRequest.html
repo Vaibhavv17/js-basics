@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style ="background-color: #212121;">
+<!-- 0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. -->
+<button id = "hi">Display</button>
+<div id="output"></div>
+    
+</body>
+<script>
+    const requestUrl = 'https://randomuser.me/api/'
+    const xhr = new XMLHttpRequest() //yeh ek class ke tarah hai
+    xhr.open('GET',requestUrl) //yahase request jati nahi hai
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4)
+    {
+        //const data = this.responseText;
+        const data = JSON.parse(this.responseText);
+        console.log(data); //string type hota hai not object when response ata hai url se 
+        //to convert string to object use JSON.parse
+        
+        const gender = data.results[0].gender;
+        console.log(gender);
+        
+        const email = data.results[0].email
+        console.log(email);
+        
+        document.querySelector('#hi').addEventListener('click',() => {
+            const p = document.createElement('p')
+            p.innerHTML = `${gender} ${email}`
+            document.querySelector('#output').appendChild(p);
+        })
+        
+    }
+    }
+    xhr.send()
+</script>
+</html>
